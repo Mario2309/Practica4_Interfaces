@@ -22,6 +22,14 @@ Partial Class Form4
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.ListViewSocios = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.PeliculasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,6 +40,9 @@ Partial Class Form4
         Me.PorCalificaionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgregarGeneroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarGeneroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SociosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoSocioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarSociosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,16 +52,62 @@ Partial Class Form4
         Me.DevolverPrestamoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ListViewSocios
+        '
+        Me.ListViewSocios.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.ListViewSocios.GridLines = True
+        Me.ListViewSocios.HideSelection = False
+        Me.ListViewSocios.Location = New System.Drawing.Point(12, 76)
+        Me.ListViewSocios.Name = "ListViewSocios"
+        Me.ListViewSocios.Size = New System.Drawing.Size(525, 236)
+        Me.ListViewSocios.TabIndex = 5
+        Me.ListViewSocios.UseCompatibleStateImageBehavior = False
+        Me.ListViewSocios.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Nombre"
+        Me.ColumnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader1.Width = 85
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Apellidos"
+        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Telefono"
+        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "DNI / NIE"
+        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Poblacion"
+        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "¿Mayor de edad?"
+        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader6.Width = 119
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(212, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(158, 24)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Listado de Socios"
         '
         'MenuStrip1
         '
@@ -58,12 +115,12 @@ Partial Class Form4
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(549, 24)
-        Me.MenuStrip1.TabIndex = 4
+        Me.MenuStrip1.TabIndex = 8
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'PeliculasToolStripMenuItem
         '
-        Me.PeliculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.PeliculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.GenerosToolStripMenuItem})
         Me.PeliculasToolStripMenuItem.Name = "PeliculasToolStripMenuItem"
         Me.PeliculasToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.PeliculasToolStripMenuItem.Text = "Peliculas"
@@ -116,6 +173,25 @@ Partial Class Form4
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
         Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'GenerosToolStripMenuItem
+        '
+        Me.GenerosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarGeneroToolStripMenuItem, Me.EliminarGeneroToolStripMenuItem})
+        Me.GenerosToolStripMenuItem.Name = "GenerosToolStripMenuItem"
+        Me.GenerosToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.GenerosToolStripMenuItem.Text = "Generos"
+        '
+        'AgregarGeneroToolStripMenuItem
+        '
+        Me.AgregarGeneroToolStripMenuItem.Name = "AgregarGeneroToolStripMenuItem"
+        Me.AgregarGeneroToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.AgregarGeneroToolStripMenuItem.Text = "Agregar genero"
+        '
+        'EliminarGeneroToolStripMenuItem
+        '
+        Me.EliminarGeneroToolStripMenuItem.Name = "EliminarGeneroToolStripMenuItem"
+        Me.EliminarGeneroToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.EliminarGeneroToolStripMenuItem.Text = "Eliminar genero"
         '
         'SociosToolStripMenuItem
         '
@@ -173,68 +249,14 @@ Partial Class Form4
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-        Me.ListView1.GridLines = True
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(12, 76)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(525, 236)
-        Me.ListView1.TabIndex = 5
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Nombre"
-        Me.ColumnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader1.Width = 85
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Apellidos"
-        Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Telefono"
-        Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "DNI / NIE"
-        Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Poblacion"
-        Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "¿Mayor de edad?"
-        Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 119
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(212, 36)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(158, 24)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Listado de Socios"
-        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(549, 324)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ListViewSocios)
         Me.IsMdiContainer = True
         Me.Name = "Form4"
         Me.Text = "Form4"
@@ -244,7 +266,14 @@ Partial Class Form4
         Me.PerformLayout()
 
     End Sub
-
+    Friend WithEvents ListViewSocios As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents Label1 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents PeliculasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgregarToolStripMenuItem As ToolStripMenuItem
@@ -255,6 +284,9 @@ Partial Class Form4
     Friend WithEvents PorCalificaionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PorFechaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GenerosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AgregarGeneroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarGeneroToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SociosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NuevoSocioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConsultarSociosToolStripMenuItem As ToolStripMenuItem
@@ -264,12 +296,4 @@ Partial Class Form4
     Friend WithEvents DevolverPrestamoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
-    Friend WithEvents ColumnHeader6 As ColumnHeader
-    Friend WithEvents Label1 As Label
 End Class

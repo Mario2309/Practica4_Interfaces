@@ -3,6 +3,7 @@
         Me.Hide()
         ModuleMenu.AgregarPeli()
     End Sub
+
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.EliminarPelis()
@@ -40,7 +41,6 @@
     Private Sub ConsultarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.ConsultaGeneral()
-
     End Sub
 
     Private Sub PorTituloToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorTituloToolStripMenuItem.Click
@@ -66,5 +66,19 @@
     Private Sub PorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorFechaToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.ConsultaFecha()
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub AgregarGeneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarGeneroToolStripMenuItem.Click
+        Me.Hide()
+        ModuleMenu.AgregarGenero()
+    End Sub
+
+    Private Sub EliminarGeneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarGeneroToolStripMenuItem.Click
+        Me.Hide()
+        ModuleMenu.EliminarGenero()
     End Sub
 End Class

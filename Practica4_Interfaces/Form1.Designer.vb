@@ -32,6 +32,9 @@ Partial Class Form1
         Me.PorCalificaionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgregarGeneroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarGeneroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SociosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoSocioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarSociosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,17 +45,17 @@ Partial Class Form1
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.contadorPelis = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBoxTitulo = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBoxCalificaciones = New System.Windows.Forms.ComboBox()
+        Me.TextBoxAutor = New System.Windows.Forms.TextBox()
+        Me.TextBoxAnio = New System.Windows.Forms.TextBox()
+        Me.ComboBoxGenero = New System.Windows.Forms.ComboBox()
         Me.btn = New System.Windows.Forms.Button()
         Me.ComboBoxTitulo = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
@@ -69,7 +72,7 @@ Partial Class Form1
         '
         'PeliculasToolStripMenuItem
         '
-        Me.PeliculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.PeliculasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.GenerosToolStripMenuItem})
         Me.PeliculasToolStripMenuItem.Name = "PeliculasToolStripMenuItem"
         Me.PeliculasToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.PeliculasToolStripMenuItem.Text = "Peliculas"
@@ -123,6 +126,25 @@ Partial Class Form1
         Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
+        'GenerosToolStripMenuItem
+        '
+        Me.GenerosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgregarGeneroToolStripMenuItem, Me.EliminarGeneroToolStripMenuItem})
+        Me.GenerosToolStripMenuItem.Name = "GenerosToolStripMenuItem"
+        Me.GenerosToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.GenerosToolStripMenuItem.Text = "Generos"
+        '
+        'AgregarGeneroToolStripMenuItem
+        '
+        Me.AgregarGeneroToolStripMenuItem.Name = "AgregarGeneroToolStripMenuItem"
+        Me.AgregarGeneroToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.AgregarGeneroToolStripMenuItem.Text = "Agregar genero"
+        '
+        'EliminarGeneroToolStripMenuItem
+        '
+        Me.EliminarGeneroToolStripMenuItem.Name = "EliminarGeneroToolStripMenuItem"
+        Me.EliminarGeneroToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.EliminarGeneroToolStripMenuItem.Text = "Eliminar genero"
+        '
         'SociosToolStripMenuItem
         '
         Me.SociosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoSocioToolStripMenuItem, Me.ConsultarSociosToolStripMenuItem})
@@ -133,13 +155,13 @@ Partial Class Form1
         'NuevoSocioToolStripMenuItem
         '
         Me.NuevoSocioToolStripMenuItem.Name = "NuevoSocioToolStripMenuItem"
-        Me.NuevoSocioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NuevoSocioToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.NuevoSocioToolStripMenuItem.Text = "Nuevo socio"
         '
         'ConsultarSociosToolStripMenuItem
         '
         Me.ConsultarSociosToolStripMenuItem.Name = "ConsultarSociosToolStripMenuItem"
-        Me.ConsultarSociosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConsultarSociosToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.ConsultarSociosToolStripMenuItem.Text = "Consultar socios"
         '
         'PrestamosToolStripMenuItem
@@ -188,14 +210,14 @@ Partial Class Form1
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Identificador"
         '
-        'Label2
+        'contadorPelis
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(117, 60)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(16, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = " - "
+        Me.contadorPelis.AutoSize = True
+        Me.contadorPelis.Location = New System.Drawing.Point(117, 60)
+        Me.contadorPelis.Name = "contadorPelis"
+        Me.contadorPelis.Size = New System.Drawing.Size(16, 13)
+        Me.contadorPelis.TabIndex = 4
+        Me.contadorPelis.Text = " - "
         '
         'Label3
         '
@@ -249,35 +271,37 @@ Partial Class Form1
         Me.TextBoxTitulo.Size = New System.Drawing.Size(140, 20)
         Me.TextBoxTitulo.TabIndex = 10
         '
-        'ComboBox1
+        'ComboBoxCalificaciones
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(120, 116)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 11
+        Me.ComboBoxCalificaciones.FormattingEnabled = True
+        Me.ComboBoxCalificaciones.Items.AddRange(New Object() {"--", "*", "**", "***", "****", "*****"})
+        Me.ComboBoxCalificaciones.Location = New System.Drawing.Point(120, 116)
+        Me.ComboBoxCalificaciones.Name = "ComboBoxCalificaciones"
+        Me.ComboBoxCalificaciones.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxCalificaciones.TabIndex = 11
         '
-        'TextBox2
+        'TextBoxAutor
         '
-        Me.TextBox2.Location = New System.Drawing.Point(347, 119)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(139, 20)
-        Me.TextBox2.TabIndex = 12
+        Me.TextBoxAutor.Location = New System.Drawing.Point(347, 119)
+        Me.TextBoxAutor.Name = "TextBoxAutor"
+        Me.TextBoxAutor.Size = New System.Drawing.Size(139, 20)
+        Me.TextBoxAutor.TabIndex = 12
         '
-        'TextBox3
+        'TextBoxAnio
         '
-        Me.TextBox3.Location = New System.Drawing.Point(120, 186)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox3.TabIndex = 13
+        Me.TextBoxAnio.Location = New System.Drawing.Point(120, 186)
+        Me.TextBoxAnio.Name = "TextBoxAnio"
+        Me.TextBoxAnio.Size = New System.Drawing.Size(121, 20)
+        Me.TextBoxAnio.TabIndex = 13
         '
-        'ComboBox2
+        'ComboBoxGenero
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(347, 184)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(140, 21)
-        Me.ComboBox2.TabIndex = 14
+        Me.ComboBoxGenero.FormattingEnabled = True
+        Me.ComboBoxGenero.Items.AddRange(New Object() {"--"})
+        Me.ComboBoxGenero.Location = New System.Drawing.Point(347, 184)
+        Me.ComboBoxGenero.Name = "ComboBoxGenero"
+        Me.ComboBoxGenero.Size = New System.Drawing.Size(140, 21)
+        Me.ComboBoxGenero.TabIndex = 14
         '
         'btn
         '
@@ -291,7 +315,7 @@ Partial Class Form1
         'ComboBoxTitulo
         '
         Me.ComboBoxTitulo.FormattingEnabled = True
-        Me.ComboBoxTitulo.Location = New System.Drawing.Point(347, 57)
+        Me.ComboBoxTitulo.Location = New System.Drawing.Point(347, 58)
         Me.ComboBoxTitulo.Name = "ComboBoxTitulo"
         Me.ComboBoxTitulo.Size = New System.Drawing.Size(140, 21)
         Me.ComboBoxTitulo.TabIndex = 17
@@ -304,17 +328,17 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(581, 307)
         Me.Controls.Add(Me.ComboBoxTitulo)
         Me.Controls.Add(Me.btn)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.ComboBoxGenero)
+        Me.Controls.Add(Me.TextBoxAnio)
+        Me.Controls.Add(Me.TextBoxAutor)
+        Me.Controls.Add(Me.ComboBoxCalificaciones)
         Me.Controls.Add(Me.TextBoxTitulo)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.contadorPelis)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
@@ -348,17 +372,20 @@ Partial Class Form1
     Friend WithEvents ConsultarPrestamosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DevolverPrestamoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents contadorPelis As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents TextBoxTitulo As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBoxCalificaciones As ComboBox
+    Friend WithEvents TextBoxAutor As TextBox
+    Friend WithEvents TextBoxAnio As TextBox
+    Friend WithEvents ComboBoxGenero As ComboBox
     Friend WithEvents btn As Button
     Friend WithEvents ComboBoxTitulo As ComboBox
+    Friend WithEvents GenerosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AgregarGeneroToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EliminarGeneroToolStripMenuItem As ToolStripMenuItem
 End Class

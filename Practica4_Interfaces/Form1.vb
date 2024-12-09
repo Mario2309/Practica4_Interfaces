@@ -4,11 +4,6 @@
         Me.Hide()
         ModuleMenu.AgregarPeli()
     End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ModuleMenu.CargarForm1()
-    End Sub
-
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.EliminarPelis()
@@ -76,5 +71,23 @@
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub AgregarGeneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarGeneroToolStripMenuItem.Click
+        Me.Hide()
+        ModuleMenu.AgregarGenero()
+    End Sub
+
+    Private Sub EliminarGeneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarGeneroToolStripMenuItem.Click
+        Me.Hide()
+        ModuleMenu.EliminarGenero()
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ModuleMenu.CargarForm1()
+    End Sub
+
+    Private Sub btn_Click(sender As Object, e As EventArgs) Handles btn.Click
+        ModuleBotones.ClickBtnForm1()
     End Sub
 End Class

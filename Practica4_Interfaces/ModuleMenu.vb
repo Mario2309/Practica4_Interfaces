@@ -105,4 +105,20 @@
         Form3.TextBoxCompletar.Show()
         Form3.Button1.Show()
     End Sub
+
+    Public Sub AgregarGenero()
+        Form7.Text = "Agregar genero"
+        Form7.Show()
+        Form7.ComboBoxElegirGenero.Hide()
+        Form7.Label1.Text = "Determina el nombre del genero: "
+        Form7.Agregar.Text = "Agregar"
+    End Sub
+
+    Public Sub EliminarGenero()
+        Form7.Text = "Eliminar genero"
+        Form7.Show()
+        Form7.TextBoxNombreGenero.Hide()
+        Form7.Label1.Text = "Determina el genero a eliminar: "
+        Form7.Agregar.Text = "Eliminar"
+    End Sub
 End Module

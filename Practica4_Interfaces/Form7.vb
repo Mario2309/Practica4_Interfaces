@@ -1,4 +1,4 @@
-﻿Public Class Form4
+﻿Public Class Form7
     Private Sub AgregarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.AgregarPeli()

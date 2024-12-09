@@ -77,27 +77,31 @@ Partial Class Form4
         '
         Me.ColumnHeader2.Text = "Apellidos"
         Me.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader2.Width = 87
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Telefono"
         Me.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader3.Width = 71
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "DNI / NIE"
         Me.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader4.Width = 72
         '
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "Poblacion"
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ColumnHeader5.Width = 101
         '
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "¿Mayor de edad?"
         Me.ColumnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ColumnHeader6.Width = 119
+        Me.ColumnHeader6.Width = 105
         '
         'Label1
         '

@@ -69,6 +69,7 @@
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        ModuleMenu.salir()
         Application.Exit()
     End Sub
 
@@ -80,5 +81,13 @@
     Private Sub EliminarGeneroToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarGeneroToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.EliminarGenero()
+    End Sub
+
+    Private Sub Agregar_Click(sender As Object, e As EventArgs) Handles Agregar.Click
+        ModuleBotones.clickGrabarGenero()
+    End Sub
+
+    Private Sub Form7_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

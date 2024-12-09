@@ -69,6 +69,7 @@
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        ModuleMenu.salir()
         Application.Exit()
     End Sub
 

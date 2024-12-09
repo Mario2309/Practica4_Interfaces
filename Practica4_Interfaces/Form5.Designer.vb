@@ -49,6 +49,7 @@ Partial Class Form5
         Me.DevolverPrestamoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComboBoxPrestados = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -235,11 +236,21 @@ Partial Class Form5
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
+        'ComboBoxPrestados
+        '
+        Me.ComboBoxPrestados.FormattingEnabled = True
+        Me.ComboBoxPrestados.Items.AddRange(New Object() {"--"})
+        Me.ComboBoxPrestados.Location = New System.Drawing.Point(178, 55)
+        Me.ComboBoxPrestados.Name = "ComboBoxPrestados"
+        Me.ComboBoxPrestados.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxPrestados.TabIndex = 14
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(322, 260)
+        Me.Controls.Add(Me.ComboBoxPrestados)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.ButtonForm)
         Me.Controls.Add(Me.ComboBoxSocio)
@@ -282,4 +293,5 @@ Partial Class Form5
     Friend WithEvents DevolverPrestamoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComboBoxPrestados As ComboBox
 End Class

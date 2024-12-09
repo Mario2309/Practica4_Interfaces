@@ -315,6 +315,7 @@ Partial Class Form1
         'ComboBoxTitulo
         '
         Me.ComboBoxTitulo.FormattingEnabled = True
+        Me.ComboBoxTitulo.Items.AddRange(New Object() {"--"})
         Me.ComboBoxTitulo.Location = New System.Drawing.Point(347, 58)
         Me.ComboBoxTitulo.Name = "ComboBoxTitulo"
         Me.ComboBoxTitulo.Size = New System.Drawing.Size(140, 21)

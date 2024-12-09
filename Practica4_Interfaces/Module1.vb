@@ -7,6 +7,8 @@ Module Module1
     Public Peliculas As String = Application.StartupPath & "\PELICULAS.txt"
     Public Datos As String = Application.StartupPath & "\GenerosNuevos.txt"
     Public ListaPeliculas As String = Application.StartupPath & "\PELICULAS.txt"
+    Public ListaSocios As String = Application.StartupPath & "\SOCIOS.txt"
+
 
 
 
@@ -74,6 +76,45 @@ Module Module1
         Form1.ComboBoxGenero.SelectedIndex = 0
     End Sub
 
+    Public Sub EliminarPelicula(comboBoxPelis As ComboBox, listViewPelis As ListView, contadorPeliculasLabel As Label)
+        If comboBoxPelis.SelectedIndex <> -1 Then
+            Dim tituloSeleccionado As String = comboBoxPelis.SelectedItem.ToString()
+            Dim itemAEliminar As ListViewItem = Nothing
+
+            ' Buscar el elemento en el ListView que tenga el título seleccionado
+            For Each item As ListViewItem In listViewPelis.Items
+                If item.SubItems.Count > 1 AndAlso item.SubItems(1).Text = tituloSeleccionado Then
+                    itemAEliminar = item
+                    Exit For
+                End If
+            Next
+
+            ' Eliminar el elemento si se encontró
+            If itemAEliminar IsNot Nothing Then
+                listViewPelis.Items.Remove(itemAEliminar)
+
+                ' Renumerar los elementos restantes
+                For i As Integer = 0 To listViewPelis.Items.Count - 1
+                    listViewPelis.Items(i).Text = (i + 1).ToString()
+                Next
+
+                ' Ajustar el contador total
+                Dim contadorPeliculas As Integer = listViewPelis.Items.Count
+                contadorPeliculasLabel.Text = contadorPeliculas.ToString()
+
+                ' Eliminar el título del ComboBox
+                comboBoxPelis.Items.Remove(tituloSeleccionado)
+
+                MessageBox.Show("La película ha sido eliminada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("No se encontró la película seleccionada en la lista.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Else
+            MessageBox.Show("Por favor, seleccione una película del ComboBox para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+
     Public Sub AgregarDatosGeneros()
         If My.Computer.FileSystem.FileExists(Generos) Then
             Dim Fichero_leer As String = Generos
@@ -90,31 +131,17 @@ Module Module1
                         Form1.ComboBoxGenero.Items.Add(Campos(0))
                     End If
                 End While
+
+                While Not Analizador_sintactico.EndOfData
+                    Campos = Analizador_sintactico.ReadFields()
+
+                    If Not Form7.ComboBoxElegirGenero.Items.Contains(Campos(0)) Then
+                        Form7.ComboBoxElegirGenero.Items.Add(Campos(0))
+                    End If
+                End While
             End Using
 
             My.Computer.FileSystem.DeleteFile(Generos)
-        End If
-    End Sub
-
-    Public Sub EliminarPelicula()
-        If Form3.ListaPelis.SelectedItems.Count > 0 Then
-            ' Recorrer y eliminar cada elemento seleccionado
-            For Each item As ListViewItem In Form3.ListaPelis.SelectedItems
-                Form3.ListaPelis.Items.Remove(item)
-            Next
-
-            ' Renumerar los elementos restantes
-            For i As Integer = 0 To Form3.ListaPelis.Items.Count - 1
-                Form3.ListaPelis.Items(i).Text = (i + 1).ToString()
-            Next
-
-            ' Ajustar el contador total
-            contadorPeliculas = Form3.ListaPelis.Items.Count
-            Form1.contadorPelis.Text = contadorPeliculas.ToString()
-
-            MessageBox.Show("Elemento(s) eliminado(s) correctamente y lista renumerada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Else
-            MessageBox.Show("Por favor, seleccione un elemento para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 
@@ -135,7 +162,27 @@ Module Module1
         End If
     End Sub
 
-    Private Sub GuardarGeneros()
+    Public Sub AgregarGenero()
+        If My.Computer.FileSystem.FileExists(Datos) Then
+            Dim Fichero_Leer As String = Datos
+            Dim Campos As String()
+
+            Dim Delimitador As String = "#"
+            Using Analizador_Sintactico As New TextFieldParser(Fichero_Leer)
+                Analizador_Sintactico.SetDelimiters(Delimitador)
+                While Not Analizador_Sintactico.EndOfData
+                    Campos = Analizador_Sintactico.ReadFields
+                    Form7.ComboBoxElegirGenero.Items.Add(Campos(0).ToString())
+                End While
+            End Using
+        End If
+    End Sub
+
+    Public Sub limiarFormGenero()
+        Form7.TextBoxNombreGenero.Clear()
+    End Sub
+
+    Public Sub GuardarGeneros()
         Dim Contador As Integer
         For Contador = 0 To Form1.ComboBoxGenero.Items.Count - 1
             My.Computer.FileSystem.WriteAllText(Generos, Form1.ComboBoxGenero.Items(Contador) & "#" & vbCrLf, True)
@@ -147,13 +194,14 @@ Module Module1
         For contador = 0 To Form1.ComboBoxGenero.Items.Count - 1
             My.Computer.FileSystem.WriteAllText(Datos, textBoxNombreGen.Text & "#", True)
         Next
+
+        limiarFormGenero()
     End Sub
 
     Public Sub CargarPeliculas()
         If My.Computer.FileSystem.FileExists(ListaPeliculas) Then
             Dim fichero As String = ListaPeliculas
             Dim campos As String()
-            Dim indice As Integer
             Dim delimitador As String = "#"
             Form3.ListaPelis.Items.Clear()
 
@@ -178,6 +226,35 @@ Module Module1
         End If
     End Sub
 
+    Public Sub CargarSocios()
+        If My.Computer.FileSystem.FileExists(ListaSocios) Then
+            Dim fichero As String = ListaSocios
+            Dim campos As String()
+            Dim indice As Integer
+            Dim delimitador As String = "#"
+            Form4.ListViewSocios.Items.Clear()
+
+            Using Analizador_sintactico As New TextFieldParser(ListaSocios)
+                Analizador_sintactico.SetDelimiters(delimitador)
+                While Not Analizador_sintactico.EndOfData
+                    campos = Analizador_sintactico.ReadFields()
+
+                    If campos.Length >= 6 Then
+                        Dim item As New ListViewItem(campos(0))
+                        item.SubItems.Add(campos(1))
+                        item.SubItems.Add(campos(2))
+                        item.SubItems.Add(campos(3))
+                        item.SubItems.Add(campos(4))
+                        item.SubItems.Add(campos(5))
+
+                        Form4.ListViewSocios.Items.Add(item)
+                    End If
+                End While
+            End Using
+            My.Computer.FileSystem.DeleteFile(ListaSocios)
+        End If
+    End Sub
+
     Public Sub GuardarPeliculas()
         For Each contenido As ListViewItem In Form3.ListaPelis.Items
             Dim linea As String = String.Join("#",
@@ -189,6 +266,20 @@ Module Module1
                                                 contenido.SubItems(5).Text
                                             )
             My.Computer.FileSystem.WriteAllText(ListaPeliculas, linea & vbCrLf, True)
+        Next
+    End Sub
+
+    Public Sub GuardarSocios()
+        For Each contenido As ListViewItem In Form4.ListViewSocios.Items
+            Dim linea As String = String.Join("#",
+                                                contenido.SubItems(0).Text,
+                                                contenido.SubItems(1).Text,
+                                                contenido.SubItems(2).Text,
+                                                contenido.SubItems(3).Text,
+                                                contenido.SubItems(4).Text,
+                                                contenido.SubItems(5).Text
+                                            )
+            My.Computer.FileSystem.WriteAllText(ListaSocios, linea & vbCrLf, True)
         Next
     End Sub
 
@@ -219,9 +310,23 @@ Module Module1
                 End If
             Next
 
+            If Not existe Then
+                Dim numeroContador As Integer = Form4.ListViewSocios.Items.Count + 1
+                Dim texto As New ListViewItem(numeroContador.ToString())
+                texto.SubItems.Add(Form2.TextBoxNombre.Text)
+                texto.SubItems.Add(Form2.TextBoxApellido.Text)
+                texto.SubItems.Add(Form2.TextBoxTelefono.Text)
+                texto.SubItems.Add(Form2.TextBoxDNI.Text)
+                texto.SubItems.Add(Form2.TextBoxPoblacion.Text)
+                texto.SubItems.Add(Form2.ComboBoxMayorEdad.Text)
+
+                Form4.ListViewSocios.Items.Add(texto)
+            End If
+
             limpiarFormSocios()
 
         End If
+
     End Sub
 
     Public Sub limpiarFormSocios()
@@ -231,6 +336,25 @@ Module Module1
         Form2.TextBoxDNI.Clear()
         Form2.TextBoxPoblacion.Clear()
         Form2.ComboBoxMayorEdad.SelectedIndex = 0
+    End Sub
+
+    Public Sub cargarTitulosEnCombobox(lista As ListView, comboBox As ComboBox)
+        comboBox.Items.Clear()
+
+        For Each item As ListViewItem In lista.Items
+            If item.SubItems.Count > 1 Then
+                comboBox.Items.Add(item.SubItems(1).Text)
+            End If
+        Next
+    End Sub
+
+    Public Sub cargarNombresSocios(lista As ListView, comboBos As ComboBox)
+        comboBos.Items.Clear()
+
+        For Each item As ListViewItem In lista.Items
+            comboBos.Items.Add(item.SubItems(0).Text)
+        Next
+
     End Sub
 
 End Module

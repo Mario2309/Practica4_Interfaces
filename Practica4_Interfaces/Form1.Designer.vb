@@ -48,12 +48,13 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBoxTitulo = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.btn = New System.Windows.Forms.Button()
+        Me.ComboBoxTitulo = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,50 +77,50 @@ Partial Class Form1
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
         '
         'ConsultarToolStripMenuItem
         '
         Me.ConsultarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PorTituloToolStripMenuItem, Me.PorAutorToolStripMenuItem, Me.PorGeneroToolStripMenuItem, Me.PorCalificaionToolStripMenuItem, Me.PorFechaToolStripMenuItem})
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.ConsultarToolStripMenuItem.Text = "Consultar"
         '
         'PorTituloToolStripMenuItem
         '
         Me.PorTituloToolStripMenuItem.Name = "PorTituloToolStripMenuItem"
-        Me.PorTituloToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorTituloToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorTituloToolStripMenuItem.Text = "Por titulo"
         '
         'PorAutorToolStripMenuItem
         '
         Me.PorAutorToolStripMenuItem.Name = "PorAutorToolStripMenuItem"
-        Me.PorAutorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorAutorToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorAutorToolStripMenuItem.Text = "Por autor"
         '
         'PorGeneroToolStripMenuItem
         '
         Me.PorGeneroToolStripMenuItem.Name = "PorGeneroToolStripMenuItem"
-        Me.PorGeneroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorGeneroToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorGeneroToolStripMenuItem.Text = "Por genero"
         '
         'PorCalificaionToolStripMenuItem
         '
         Me.PorCalificaionToolStripMenuItem.Name = "PorCalificaionToolStripMenuItem"
-        Me.PorCalificaionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorCalificaionToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorCalificaionToolStripMenuItem.Text = "Por calificaion"
         '
         'PorFechaToolStripMenuItem
         '
         Me.PorFechaToolStripMenuItem.Name = "PorFechaToolStripMenuItem"
-        Me.PorFechaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorFechaToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorFechaToolStripMenuItem.Text = "Por fecha"
         '
         'EliminarToolStripMenuItem
         '
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'SociosToolStripMenuItem
@@ -132,13 +133,13 @@ Partial Class Form1
         'NuevoSocioToolStripMenuItem
         '
         Me.NuevoSocioToolStripMenuItem.Name = "NuevoSocioToolStripMenuItem"
-        Me.NuevoSocioToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.NuevoSocioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NuevoSocioToolStripMenuItem.Text = "Nuevo socio"
         '
         'ConsultarSociosToolStripMenuItem
         '
         Me.ConsultarSociosToolStripMenuItem.Name = "ConsultarSociosToolStripMenuItem"
-        Me.ConsultarSociosToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.ConsultarSociosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ConsultarSociosToolStripMenuItem.Text = "Consultar socios"
         '
         'PrestamosToolStripMenuItem
@@ -241,12 +242,12 @@ Partial Class Form1
         Me.Label9.TabIndex = 9
         Me.Label9.Text = "Genero"
         '
-        'TextBox1
+        'TextBoxTitulo
         '
-        Me.TextBox1.Location = New System.Drawing.Point(347, 58)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox1.TabIndex = 10
+        Me.TextBoxTitulo.Location = New System.Drawing.Point(347, 58)
+        Me.TextBoxTitulo.Name = "TextBoxTitulo"
+        Me.TextBoxTitulo.Size = New System.Drawing.Size(140, 20)
+        Me.TextBoxTitulo.TabIndex = 10
         '
         'ComboBox1
         '
@@ -284,8 +285,16 @@ Partial Class Form1
         Me.btn.Name = "btn"
         Me.btn.Size = New System.Drawing.Size(128, 30)
         Me.btn.TabIndex = 15
-        Me.btn.Text = "Button1"
+        Me.btn.Text = "Agregar"
         Me.btn.UseVisualStyleBackColor = True
+        '
+        'ComboBoxTitulo
+        '
+        Me.ComboBoxTitulo.FormattingEnabled = True
+        Me.ComboBoxTitulo.Location = New System.Drawing.Point(347, 57)
+        Me.ComboBoxTitulo.Name = "ComboBoxTitulo"
+        Me.ComboBoxTitulo.Size = New System.Drawing.Size(140, 21)
+        Me.ComboBoxTitulo.TabIndex = 17
         '
         'Form1
         '
@@ -293,12 +302,13 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(581, 307)
+        Me.Controls.Add(Me.ComboBoxTitulo)
         Me.Controls.Add(Me.btn)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBoxTitulo)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label5)
@@ -344,10 +354,11 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBoxTitulo As TextBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents btn As Button
+    Friend WithEvents ComboBoxTitulo As ComboBox
 End Class

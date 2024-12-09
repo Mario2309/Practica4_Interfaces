@@ -76,50 +76,50 @@ Partial Class Form2
         'AgregarToolStripMenuItem
         '
         Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
-        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AgregarToolStripMenuItem.Text = "Agregar"
         '
         'ConsultarToolStripMenuItem
         '
         Me.ConsultarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PorTituloToolStripMenuItem, Me.PorAutorToolStripMenuItem, Me.PorGeneroToolStripMenuItem, Me.PorCalificaionToolStripMenuItem, Me.PorFechaToolStripMenuItem})
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.ConsultarToolStripMenuItem.Text = "Consultar"
         '
         'PorTituloToolStripMenuItem
         '
         Me.PorTituloToolStripMenuItem.Name = "PorTituloToolStripMenuItem"
-        Me.PorTituloToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorTituloToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorTituloToolStripMenuItem.Text = "Por titulo"
         '
         'PorAutorToolStripMenuItem
         '
         Me.PorAutorToolStripMenuItem.Name = "PorAutorToolStripMenuItem"
-        Me.PorAutorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorAutorToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorAutorToolStripMenuItem.Text = "Por autor"
         '
         'PorGeneroToolStripMenuItem
         '
         Me.PorGeneroToolStripMenuItem.Name = "PorGeneroToolStripMenuItem"
-        Me.PorGeneroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorGeneroToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorGeneroToolStripMenuItem.Text = "Por genero"
         '
         'PorCalificaionToolStripMenuItem
         '
         Me.PorCalificaionToolStripMenuItem.Name = "PorCalificaionToolStripMenuItem"
-        Me.PorCalificaionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorCalificaionToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorCalificaionToolStripMenuItem.Text = "Por calificaion"
         '
         'PorFechaToolStripMenuItem
         '
         Me.PorFechaToolStripMenuItem.Name = "PorFechaToolStripMenuItem"
-        Me.PorFechaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorFechaToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorFechaToolStripMenuItem.Text = "Por fecha"
         '
         'EliminarToolStripMenuItem
         '
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'SociosToolStripMenuItem
@@ -277,11 +277,11 @@ Partial Class Form2
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(211, 270)
+        Me.Button1.Location = New System.Drawing.Point(236, 267)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(110, 41)
         Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Agregar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Form2

@@ -1,14 +1,8 @@
-﻿Public Class Form1
-
+﻿Public Class Form6
     Private Sub AgregarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.AgregarPeli()
     End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ModuleMenu.CargarForm1()
-    End Sub
-
     Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.EliminarPelis()
@@ -72,9 +66,5 @@
     Private Sub PorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PorFechaToolStripMenuItem.Click
         Me.Hide()
         ModuleMenu.ConsultaFecha()
-    End Sub
-
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-
     End Sub
 End Class

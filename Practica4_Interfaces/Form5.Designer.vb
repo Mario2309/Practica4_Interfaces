@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form3
+Partial Class Form5
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -41,18 +41,11 @@ Partial Class Form3
         Me.DevolverPrestamoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListaPelis = New System.Windows.Forms.ListView()
-        Me.Contador = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Titulo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Calificacion = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Autor = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.AnioLanzamiento = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Genero = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.NombreApartado = New System.Windows.Forms.Label()
-        Me.TextBoxCompletar = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBoxCalificacion = New System.Windows.Forms.ComboBox()
-        Me.ComboBoxGeneros = New System.Windows.Forms.ComboBox()
+        Me.LabelLibro = New System.Windows.Forms.Label()
+        Me.ComboBoxLibro = New System.Windows.Forms.ComboBox()
+        Me.LabelSocio = New System.Windows.Forms.Label()
+        Me.ComboBoxSocio = New System.Windows.Forms.ComboBox()
+        Me.ButtonForm = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -61,8 +54,8 @@ Partial Class Form3
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PeliculasToolStripMenuItem, Me.SociosToolStripMenuItem, Me.PrestamosToolStripMenuItem, Me.AcercaDeToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(549, 24)
-        Me.MenuStrip1.TabIndex = 4
+        Me.MenuStrip1.Size = New System.Drawing.Size(322, 24)
+        Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'PeliculasToolStripMenuItem
@@ -88,31 +81,31 @@ Partial Class Form3
         'PorTituloToolStripMenuItem
         '
         Me.PorTituloToolStripMenuItem.Name = "PorTituloToolStripMenuItem"
-        Me.PorTituloToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorTituloToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorTituloToolStripMenuItem.Text = "Por titulo"
         '
         'PorAutorToolStripMenuItem
         '
         Me.PorAutorToolStripMenuItem.Name = "PorAutorToolStripMenuItem"
-        Me.PorAutorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorAutorToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorAutorToolStripMenuItem.Text = "Por autor"
         '
         'PorGeneroToolStripMenuItem
         '
         Me.PorGeneroToolStripMenuItem.Name = "PorGeneroToolStripMenuItem"
-        Me.PorGeneroToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorGeneroToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorGeneroToolStripMenuItem.Text = "Por genero"
         '
         'PorCalificaionToolStripMenuItem
         '
         Me.PorCalificaionToolStripMenuItem.Name = "PorCalificaionToolStripMenuItem"
-        Me.PorCalificaionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorCalificaionToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorCalificaionToolStripMenuItem.Text = "Por calificaion"
         '
         'PorFechaToolStripMenuItem
         '
         Me.PorFechaToolStripMenuItem.Name = "PorFechaToolStripMenuItem"
-        Me.PorFechaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PorFechaToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.PorFechaToolStripMenuItem.Text = "Por fecha"
         '
         'EliminarToolStripMenuItem
@@ -177,108 +170,63 @@ Partial Class Form3
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
-        'ListaPelis
+        'LabelLibro
         '
-        Me.ListaPelis.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Contador, Me.Titulo, Me.Calificacion, Me.Autor, Me.AnioLanzamiento, Me.Genero})
-        Me.ListaPelis.GridLines = True
-        Me.ListaPelis.HideSelection = False
-        Me.ListaPelis.Location = New System.Drawing.Point(12, 96)
-        Me.ListaPelis.Name = "ListaPelis"
-        Me.ListaPelis.Size = New System.Drawing.Size(525, 216)
-        Me.ListaPelis.TabIndex = 9
-        Me.ListaPelis.UseCompatibleStateImageBehavior = False
-        Me.ListaPelis.View = System.Windows.Forms.View.Details
+        Me.LabelLibro.AutoSize = True
+        Me.LabelLibro.Location = New System.Drawing.Point(78, 63)
+        Me.LabelLibro.Name = "LabelLibro"
+        Me.LabelLibro.Size = New System.Drawing.Size(94, 13)
+        Me.LabelLibro.TabIndex = 6
+        Me.LabelLibro.Text = "Determina el libro: "
         '
-        'Contador
+        'ComboBoxLibro
         '
-        Me.Contador.Text = "Contador"
+        Me.ComboBoxLibro.FormattingEnabled = True
+        Me.ComboBoxLibro.Location = New System.Drawing.Point(178, 55)
+        Me.ComboBoxLibro.Name = "ComboBoxLibro"
+        Me.ComboBoxLibro.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxLibro.TabIndex = 7
         '
-        'Titulo
+        'LabelSocio
         '
-        Me.Titulo.Text = "Titulo"
-        Me.Titulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Titulo.Width = 98
+        Me.LabelSocio.AutoSize = True
+        Me.LabelSocio.Location = New System.Drawing.Point(33, 107)
+        Me.LabelSocio.Name = "LabelSocio"
+        Me.LabelSocio.Size = New System.Drawing.Size(139, 13)
+        Me.LabelSocio.TabIndex = 8
+        Me.LabelSocio.Text = "Determina quien lo obtiene: "
         '
-        'Calificacion
+        'ComboBoxSocio
         '
-        Me.Calificacion.Text = "Calificacion"
-        Me.Calificacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Calificacion.Width = 99
+        Me.ComboBoxSocio.FormattingEnabled = True
+        Me.ComboBoxSocio.Location = New System.Drawing.Point(178, 99)
+        Me.ComboBoxSocio.Name = "ComboBoxSocio"
+        Me.ComboBoxSocio.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxSocio.TabIndex = 9
         '
-        'Autor
+        'ButtonForm
         '
-        Me.Autor.Text = "Autor"
-        Me.Autor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Autor.Width = 87
+        Me.ButtonForm.Location = New System.Drawing.Point(115, 157)
+        Me.ButtonForm.Name = "ButtonForm"
+        Me.ButtonForm.Size = New System.Drawing.Size(102, 62)
+        Me.ButtonForm.TabIndex = 10
+        Me.ButtonForm.Text = "Prestar"
+        Me.ButtonForm.UseVisualStyleBackColor = True
         '
-        'AnioLanzamiento
-        '
-        Me.AnioLanzamiento.Text = "Lanzamiento"
-        Me.AnioLanzamiento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.AnioLanzamiento.Width = 95
-        '
-        'Genero
-        '
-        Me.Genero.Text = "Genero"
-        Me.Genero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Genero.Width = 82
-        '
-        'NombreApartado
-        '
-        Me.NombreApartado.AutoSize = True
-        Me.NombreApartado.Location = New System.Drawing.Point(39, 52)
-        Me.NombreApartado.Name = "NombreApartado"
-        Me.NombreApartado.Size = New System.Drawing.Size(97, 13)
-        Me.NombreApartado.TabIndex = 11
-        Me.NombreApartado.Text = "Determina el titulo: "
-        '
-        'TextBoxCompletar
-        '
-        Me.TextBoxCompletar.Location = New System.Drawing.Point(172, 47)
-        Me.TextBoxCompletar.Name = "TextBoxCompletar"
-        Me.TextBoxCompletar.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxCompletar.TabIndex = 12
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(435, 47)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Filtrar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ComboBoxCalificacion
-        '
-        Me.ComboBoxCalificacion.FormattingEnabled = True
-        Me.ComboBoxCalificacion.Location = New System.Drawing.Point(172, 47)
-        Me.ComboBoxCalificacion.Name = "ComboBoxCalificacion"
-        Me.ComboBoxCalificacion.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBoxCalificacion.TabIndex = 15
-        '
-        'ComboBoxGeneros
-        '
-        Me.ComboBoxGeneros.FormattingEnabled = True
-        Me.ComboBoxGeneros.Location = New System.Drawing.Point(172, 47)
-        Me.ComboBoxGeneros.Name = "ComboBoxGeneros"
-        Me.ComboBoxGeneros.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBoxGeneros.TabIndex = 16
-        '
-        'Form3
+        'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(549, 324)
-        Me.Controls.Add(Me.ComboBoxGeneros)
-        Me.Controls.Add(Me.ComboBoxCalificacion)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBoxCompletar)
-        Me.Controls.Add(Me.NombreApartado)
-        Me.Controls.Add(Me.ListaPelis)
+        Me.ClientSize = New System.Drawing.Size(322, 260)
+        Me.Controls.Add(Me.ButtonForm)
+        Me.Controls.Add(Me.ComboBoxSocio)
+        Me.Controls.Add(Me.LabelSocio)
+        Me.Controls.Add(Me.ComboBoxLibro)
+        Me.Controls.Add(Me.LabelLibro)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
-        Me.Name = "Form3"
-        Me.Text = "Form3"
+        Me.Name = "Form5"
+        Me.Text = "Form5"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -305,16 +253,9 @@ Partial Class Form3
     Friend WithEvents DevolverPrestamoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListaPelis As ListView
-    Friend WithEvents Contador As ColumnHeader
-    Friend WithEvents Titulo As ColumnHeader
-    Friend WithEvents Calificacion As ColumnHeader
-    Friend WithEvents Autor As ColumnHeader
-    Friend WithEvents AnioLanzamiento As ColumnHeader
-    Friend WithEvents Genero As ColumnHeader
-    Friend WithEvents NombreApartado As Label
-    Friend WithEvents TextBoxCompletar As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ComboBoxCalificacion As ComboBox
-    Friend WithEvents ComboBoxGeneros As ComboBox
+    Friend WithEvents LabelLibro As Label
+    Friend WithEvents ComboBoxLibro As ComboBox
+    Friend WithEvents LabelSocio As Label
+    Friend WithEvents ComboBoxSocio As ComboBox
+    Friend WithEvents ButtonForm As Button
 End Class
